@@ -1,1 +1,0 @@
-/usr/bin/cc -Wl,-export-dynamic CMakeFiles/pipeline_example.dir/src/pipeline_example.c.o -o pipeline_example  -Wl,-rpath,/home/xianlee/workspace/projects/opensource/cursor/zettos-nnserver/build -Wl,--whole-archive libmodyn.so.1.0.0 -Wl,--no-whole-archive 
