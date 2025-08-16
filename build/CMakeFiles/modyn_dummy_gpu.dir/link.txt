@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libmodyn_dummy_gpu.so -o plugins/libmodyn_dummy_gpu.so CMakeFiles/modyn_dummy_gpu.dir/src/devices/dummy/dummy_device_gpu.c.o  -ldl 

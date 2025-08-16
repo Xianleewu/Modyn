@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-export-dynamic CMakeFiles/test_all_in_one.dir/tests/test_all_in_one.c.o -o test_all_in_one  -Wl,-rpath,/home/xianlee/workspace/projects/opensource/cursor/zettos-nnserver/build libmodyn.so.1.0.0 

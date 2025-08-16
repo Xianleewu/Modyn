@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodyn.a CMakeFiles/modyn_static.dir/src/pipeline/modyn_pipeline.c.o CMakeFiles/modyn_static.dir/src/pipeline/dummy_node.c.o CMakeFiles/modyn_static.dir/src/component_manager.c.o CMakeFiles/modyn_static.dir/src/modyn_device_mgmt.c.o CMakeFiles/modyn_static.dir/src/modyn_model_loading.c.o CMakeFiles/modyn_static.dir/src/modyn_stubs.c.o CMakeFiles/modyn_static.dir/src/modyn_autoload.c.o CMakeFiles/modyn_static.dir/src/devices/dummy/dummy_device.c.o
+/usr/bin/ranlib libmodyn.a
