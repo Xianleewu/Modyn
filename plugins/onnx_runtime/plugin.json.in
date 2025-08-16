@@ -1,0 +1,146 @@
+{
+  "name": "onnx_runtime",
+  "display_name": "ONNX Runtime",
+  "description": "ONNX Runtime inference engine plugin for Modyn",
+  "version": "@PROJECT_VERSION@",
+  "author": "Modyn Team",
+  "license": "MIT",
+  "homepage": "https://github.com/modyn/plugins/onnx_runtime",
+  "repository": "https://github.com/modyn/modyn",
+  "type": "inference_engine",
+  "backend_type": "ONNX",
+  "api_version": "1.0",
+  "min_modyn_version": "1.0.0",
+  "library": "libonnx_runtime.so",
+  "entry_points": {
+    "info": "plugin_get_info",
+    "interface": "plugin_get_interface"
+  },
+  "dependencies": {
+    "required": [],
+    "optional": [
+      {
+        "name": "onnxruntime",
+        "version": ">=1.8.0",
+        "description": "ONNX Runtime library for actual inference"
+      }
+    ]
+  },
+  "capabilities": [
+    "model_loading",
+    "inference",
+    "batch_inference",
+    "multi_input",
+    "multi_output",
+    "dynamic_shapes"
+  ],
+  "supported_formats": [
+    "onnx"
+  ],
+  "supported_data_types": [
+    "float32",
+    "float16",
+    "int8",
+    "int32",
+    "int64"
+  ],
+  "configuration": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "device_id": {
+          "type": "integer",
+          "description": "Device ID for inference",
+          "default": 0,
+          "minimum": 0
+        },
+        "num_threads": {
+          "type": "integer",
+          "description": "Number of threads for inference",
+          "default": 4,
+          "minimum": 1,
+          "maximum": 32
+        },
+        "enable_fp16": {
+          "type": "boolean",
+          "description": "Enable FP16 optimization",
+          "default": false
+        },
+        "enable_int8": {
+          "type": "boolean",
+          "description": "Enable INT8 quantization",
+          "default": false
+        },
+        "optimization_level": {
+          "type": "string",
+          "description": "ONNX Runtime optimization level",
+          "enum": ["disable", "basic", "extended", "all"],
+          "default": "basic"
+        },
+        "execution_provider": {
+          "type": "string",
+          "description": "Execution provider to use",
+          "enum": ["cpu", "cuda", "tensorrt", "openvino", "directml"],
+          "default": "cpu"
+        }
+      }
+    },
+    "examples": [
+      {
+        "name": "Default CPU Configuration",
+        "description": "Basic CPU inference configuration",
+        "config": {
+          "device_id": 0,
+          "num_threads": 4,
+          "execution_provider": "cpu"
+        }
+      },
+      {
+        "name": "Optimized CPU Configuration",
+        "description": "Optimized CPU configuration with FP16",
+        "config": {
+          "device_id": 0,
+          "num_threads": 8,
+          "enable_fp16": true,
+          "optimization_level": "extended",
+          "execution_provider": "cpu"
+        }
+      }
+    ]
+  },
+  "platform": {
+    "os": ["linux", "windows", "macos"],
+    "arch": ["x86_64", "aarch64", "arm"],
+    "min_glibc": "2.17"
+  },
+  "build_info": {
+    "build_date": "@CMAKE_BUILD_DATE@",
+    "build_type": "@CMAKE_BUILD_TYPE@",
+    "compiler": "@CMAKE_C_COMPILER_ID@ @CMAKE_C_COMPILER_VERSION@",
+    "cmake_version": "@CMAKE_VERSION@"
+  },
+  "testing": {
+    "self_test": true,
+    "test_models": [
+      {
+        "name": "basic_test",
+        "description": "Basic functionality test",
+        "input_shape": [1, 3, 224, 224],
+        "output_shape": [1, 1000]
+      }
+    ]
+  },
+  "documentation": {
+    "readme": "README.md",
+    "api_docs": "docs/api.md",
+    "examples": "examples/",
+    "changelog": "CHANGELOG.md"
+  },
+  "tags": [
+    "inference",
+    "onnx",
+    "machine-learning",
+    "deep-learning",
+    "neural-networks"
+  ]
+} 

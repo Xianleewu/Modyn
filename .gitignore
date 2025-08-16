@@ -1,55 +1,91 @@
-# Prerequisites
-*.d
-
-# Object files
+# 编译输出
+build/
 *.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
 *.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
+*.a
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+*.exe
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# CMake 生成的文件
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# debug information files
-*.dwo
+# 日志文件
+*.log
+*.txt.user
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# 测试文件
+test_output/
+*.test
+
+# 模型文件
+*.rknn
+*.onnx
+*.pb
+*.tflite
+*.engine
+*.plan
+
+# 数据文件
+*.jpg
+*.png
+*.mp4
+*.avi
+*.bin
+*.dat
+
+# 文档生成
+docs/html/
+docs/latex/
+*.dox
+
+# 打包文件
+*.tar.gz
+*.zip
+*.deb
+*.rpm
+
+# 配置文件
+config.local
+*.conf.local
+
+# Python 缓存（如果有 Python 绑定）
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+
+# 性能分析文件
+*.prof
+*.perf
+callgrind.out.*
+gmon.out
+
+# 内存检查文件
+*.mem
+valgrind-*.log 
